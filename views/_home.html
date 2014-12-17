@@ -1,0 +1,28 @@
+<input type="text" ng-model="names">
+
+<table class="pkmntable">
+  <thear>
+    <tr>
+      <th>Name:</th>
+      <th>Type:</th>
+      <th class="atk"><a href="" ng-click="$order = 'attack'"> Atk:</a></th>
+      <th class="def">Def:</th>
+      <th class="spa">SpA:</th>
+      <th class="spd">SpD</th>
+      <th class="spe">Spe</th>
+      <th class="hp">Hp</th>
+      <th>Add</th>
+    </tr>
+  </thear>
+  <tr ng-repeat="pkmn in home.pokemon | orderBy : $order : true  | filter : names | limitTo : 20" >
+    <td>{{pkmn.name}}</td>
+    <td><span ng-repeat="type in pkmn.types">{{type.name}} </span></td>
+    <td class="atk">{{pkmn.attack}}</td>
+    <td class="def">{{pkmn.defense}}</td>
+    <td class="spa">{{pkmn.sp_atk}}</td>
+    <td class="spd">{{pkmn.sp_def}}</td>
+    <td class="spe">{{pkmn.speed}}</td>
+    <td class="hp">{{pkmn.hp}}</td>
+    <td><button class="add">Add</button></td>
+  </tr>
+</table>

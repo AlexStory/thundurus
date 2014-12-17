@@ -25,7 +25,8 @@ h6 {
   font-size: 1.125em; }
 
 body {
-  background: #3498db; }
+  background: #3498db;
+  padding-top: 30px; }
 
 .topnav {
   padding-left: 15px;
@@ -44,4 +45,57 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  background: #fdfdfd; }
+  border-radius: 6px;
+  background: #fdfdfd;
+  padding: 15px; }
+
+.pkmntable {
+  border-spacing: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  .pkmntable tbody td {
+    border-top: 1px solid #d4d4d4;
+    text-align: left; }
+  .pkmntable tbody tr:nth-child(odd) {
+    background-color: #eee; }
+  .pkmntable tbody tr:nth-child(even) {
+    background-color: #fdfdfd; }
+  .pkmntable thead th {
+    background-color: #fdfdfd;
+    border-bottom: 2px #d4d4d4 solid;
+    text-align: left; }
+  .pkmntable td {
+    padding-right: 15px; }
+    .pkmntable td:last-child {
+      padding-right: 0; }
+
+.add {
+  background-color: #2980b9;
+  border: 1px solid #fdfdfd;
+  border-radius: 10px;
+  color: #fdfdfd;
+  padding: 0.5em 1em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  .add:hover {
+    background-color: #20638f; }
+
+.atk {
+  background-color: #f39c12; }
+
+.def {
+  background-color: #f1c40f; }
+
+.spa {
+  background-color: #3498db; }
+
+.spd {
+  background-color: #2ecc71; }
+
+.spe {
+  background-color: #9b59b6; }
+
+.hp {
+  background-color: #e74c3c; }

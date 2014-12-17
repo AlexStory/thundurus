@@ -4,6 +4,7 @@
 
 body {
   background: $light-blue;
+  padding-top: 30px;
 }
 
 .topnav {
@@ -12,5 +13,48 @@ body {
 
 .wrap {
   @include container;
+  @include smooth;
   background: $off-white;
+  padding: 15px;
+}
+
+.pkmntable {
+  @include striped-table;
+  @include center;
+  td {
+    padding-right: 15px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.add {
+  @include button($blue, $off-white);
+  @include center;
+}
+
+.atk {
+  background-color: $orange;
+}
+
+.def {
+  background-color: $yellow;
+}
+
+.spa {
+  background-color: $light-blue;
+}
+
+.spd {
+  background-color: $light-green;
+}
+
+.spe {
+  background-color: $light-purple;
+}
+
+.hp {
+  background-color: $red;
 }
