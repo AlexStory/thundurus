@@ -1,24 +1,14 @@
 @import 'zeppelin/zeppelin';
-
 @include reset;
+
+// General
 
 body {
   background: $light-blue;
   padding-top: 47px;
 }
-
-.topnav {
-  @include fixed-nav(shade);
-  @include side-pad(50px);
-}
-
-.logoicon {
-  max-width: 30px;
-}
-
-.logsign {
-  float: right;
-  margin-right: 150px;
+a:visited {
+  color: $off-black;
 }
 
 .wrap {
@@ -82,6 +72,33 @@ body {
 
 
 // Navigation Dropdown
+
+.topnav {
+  @include fixed-nav(shade);
+  @include side-pad(50px);
+}
+
+.logoicon {
+  max-width: 30px;
+}
+
+.logsign {
+  float: right;
+  margin-right: 150px;
+}
+
+.links {
+  margin-right: 20px;
+
+  li {
+    display: inline-block;
+
+    &:nth-child(n+2):before {
+      content: ' | ';
+    }
+  }
+}
+
 
 nav div {
   display: inline-block;

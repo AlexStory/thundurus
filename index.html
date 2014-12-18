@@ -6,12 +6,13 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <nav class="topnav">
+  <div ng-include="'views/_header.html'"></div>
+  <!-- <nav class="topnav">
     <img src="img/thundurus.jpg" class="logoicon">
     <em>Thundurus</em>
     <div >
       <ul>
-        <li><span class="logsign">Login/Sign-Up</span>
+        <li><a class="logsign" href="">Login/Sign-Up</a>
           <ul class="logform">
             <li><input type="text" class="loginput" placeholder="email"></li>
             <li><input type="password" class="loginput" placeholder="password"></li>
@@ -21,8 +22,10 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
+
   <div ng-view class="wrap">
+
   </div>
 </body>
 <script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
@@ -33,6 +36,7 @@
 <script src="js/main.js"></script>
 <script src="js/config.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/navctrl.js"></script>
 <script src="js/pokemon.js"></script>
 
 </html>
