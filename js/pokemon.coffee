@@ -1,8 +1,8 @@
 angular.module "thundurus"
 .factory "pkmnFactory", ($http) ->
-  pokemon = []
 
   setPokes = (cb)->
+    pokemon = []
     $http.get "doc.json"
       .success (data) ->
         for d,v of data
@@ -10,6 +10,5 @@ angular.module "thundurus"
             t.name
           .join('/')
           pokemon.push v
-        cb()
-  pokemon : pokemon
+        cb(pokemon)
   setPokes : setPokes

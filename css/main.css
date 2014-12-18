@@ -25,11 +25,16 @@ h6 {
   font-size: 1.125em; }
 
 body {
-  background: #3498db;
-  padding-top: 47px; }
+  background-color: #3498db;
+  background-image: url('../img/bg.png');
+  background-size: cover;
+  padding-top: 47px;
+  background-attachment: fixed; }
 
-a:visited {
+a {
   color: #222; }
+  a:visited {
+    color: #222; }
 
 .wrap {
   max-width: 960px;
@@ -37,8 +42,13 @@ a:visited {
   margin-right: auto;
   text-align: center;
   border-radius: 6px;
-  background: #fdfdfd;
-  padding: 15px; }
+  background: rgba(250, 250, 250, 0.9);
+  padding: 15px;
+  margin-bottom: 15px; }
+  .wrap:after {
+    clear: both;
+    content: '';
+    display: table; }
 
 .pkmntable {
   border-spacing: 0;
@@ -109,6 +119,10 @@ a:visited {
 .hp {
   background-color: #e74c3c; }
 
+@font-face {
+  font-family: munro;
+  src: url('../img/MunroNarrow.ttf'); }
+
 .topnav {
   padding-left: 15px;
   padding-right: 15px;
@@ -121,7 +135,9 @@ a:visited {
   box-shadow: 0 2px 10px #222;
   color: #222;
   padding-left: 50px;
-  padding-right: 50px; }
+  padding-right: 50px;
+  font-family: 'munro';
+  font-size: 30px; }
 
 .logoicon {
   max-width: 30px; }
@@ -183,10 +199,41 @@ nav ul {
           background-color: #217dbb; }
 
 .show {
-  display: inline-block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  display: inline-block;
   margin: 0;
   padding: 0;
   background: #fdfdfd; }
+
+.thun {
+  box-sizing: border-box;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+  width: 31.83333%;
+  float: left; }
+
+.infotext {
+  box-sizing: border-box;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+  width: 65.16667%;
+  display: inline-block;
+  float: left; }
+  .infotext h1 {
+    font-family: 'munro'; }
+  .infotext button {
+    background-color: #e74c3c;
+    border: 1px solid #fdfdfd;
+    border-radius: 10px;
+    color: #fdfdfd;
+    padding: 0.5em 1em;
+    float: right;
+    font-size: 18px; }
+    .infotext button:hover {
+      background-color: #fdfdfd;
+      border-color: #e74c3c;
+      color: #e74c3c; }
+  .infotext p {
+    text-align: left; }

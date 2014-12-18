@@ -18,7 +18,7 @@ gulp.task("coffee", function() {
 });
 
 gulp.task("default", [ "sass", "coffee" ], function() {
-  gulp.src("./")
+  gulp.src(".")
     .pipe(webserver());
     gulp.watch("css/*.scss", [ "sass" ] )
     gulp.watch("js/*.coffee", [ "coffee" ] )

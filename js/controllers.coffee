@@ -1,7 +1,7 @@
 angular.module 'thundurus'
 .controller 'HomeController', (pkmnFactory) ->
   vm = @
-  vm.pokemon
+  vm.pokemon = []
   vm.order='national_id'
   vm.reversed = false
   vm.changed = false
@@ -11,7 +11,7 @@ angular.module 'thundurus'
     vm.order = input
     return
 
-  pkmnFactory.setPokes ->
-    vm.pokemon = pkmnFactory.pokemon
+  pkmnFactory.setPokes (data)->
+    vm.pokemon = data
     console.log vm.pokemon
   return

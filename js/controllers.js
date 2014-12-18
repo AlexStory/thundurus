@@ -2,7 +2,7 @@
   angular.module('thundurus').controller('HomeController', function(pkmnFactory) {
     var vm;
     vm = this;
-    vm.pokemon;
+    vm.pokemon = [];
     vm.order = 'national_id';
     vm.reversed = false;
     vm.changed = false;
@@ -14,8 +14,8 @@
       }
       vm.order = input;
     };
-    pkmnFactory.setPokes(function() {
-      vm.pokemon = pkmnFactory.pokemon;
+    pkmnFactory.setPokes(function(data) {
+      vm.pokemon = data;
       return console.log(vm.pokemon);
     });
   });

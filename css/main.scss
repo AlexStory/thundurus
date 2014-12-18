@@ -4,144 +4,29 @@
 // General
 
 body {
-  background: $light-blue;
+  background-color: $light-blue;
+  background-image: url('../img/bg.png');
+  background-size: cover;
   padding-top: 47px;
+  background-attachment: fixed;
 }
-a:visited {
+
+a {
   color: $off-black;
+  &:visited {
+    color: $off-black;
+  }
 }
 
 .wrap {
   @include container;
   @include smooth;
-  background: $off-white;
+  @include clearfix;
+  background: rgba(250,250,250,.9);
   padding: 15px;
+  margin-bottom: 15px;
 }
 
-// Pokemon Table
-
-.pkmntable {
-  @include striped-table;
-  @include center;
-  td {
-    padding-right: 15px;
-
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-}
-
-.names {
-  @include input;
-  margin-bottom: 10px;
-}
-
-.gif {
-  max-width: 40px;
-}
-
-.add {
-  @include button($blue, $off-white);
-  @include center;
-}
-
-.atk {
-  background-color: $orange;
-}
-
-.def {
-  background-color: $yellow;
-}
-
-.spa {
-  background-color: $light-blue;
-}
-
-.spd {
-  background-color: $light-green;
-}
-
-.spe {
-  background-color: $light-purple;
-}
-
-.hp {
-  background-color: $red;
-}
-
-
-// Navigation Dropdown
-
-.topnav {
-  @include fixed-nav(shade);
-  @include side-pad(50px);
-}
-
-.logoicon {
-  max-width: 30px;
-}
-
-.logsign {
-  float: right;
-  margin-right: 150px;
-}
-
-.links {
-  margin-right: 20px;
-
-  li {
-    display: inline-block;
-
-    &:nth-child(n+2):before {
-      content: ' | ';
-    }
-  }
-}
-
-
-nav div {
-  display: inline-block;
-  float: right;
-}
-nav ul {
-  display: inline-block;
-  list-style: none;
-  padding: 0 19px;
-  position: relative;
-  float: right;
-  margin: 0;
-  ul {
-    @include smooth;
-    padding: 20px;
-    display: none;
-    left: 10px;
-    position: absolute;
-    top: 27px;
-    border: 2px solid $grey;
-
-    li {
-      float: none;
-      display: block;
-      padding: 5px;
-
-      input {
-        @include input;
-      }
-
-      button {
-        @include button($light-blue, $off-white);
-      }
-    }
-  }
-}
-
-.show {
-  display: inline-block;
-  @include center;
-  margin: 0;
-  padding : 0;
-  background: $off-white;
-
-
-}
+@import '_table.scss';
+@import '_nav.scss';
+@import '_splash.scss';
