@@ -1,22 +1,44 @@
-<input type="text" ng-model="names">
+<input type="text" ng-model="names" class="names" placeholder="Type names here">
+<select ng-model="types" class="names" >
+  <option value="">Chose a type</option>
+  <option value="grass">grass</option>
+  <option value="fire">fire</option>
+  <option value="water">water</option>
+  <option value="electric">electric</option>
+  <option value="rock">rock</option>
+  <option value="ground">ground</option>
+  <option value="flying">flying</option>
+  <option value="ice">ice</option>
+  <option value="bug">bug</option>
+  <option value="poison">poison</option>
+  <option value="psychic">psychic</option>
+  <option value="dragon">dragon</option>
+  <option value="ghost">ghost</option>
+  <option value="fighting">fighting</option>
+  <option value="steel">steel</option>
+  <option value="dark">dark</option>
+  <option value="fairy">fairy</option>
+</select>
 
 <table class="pkmntable">
-  <thear>
+  <thead>
     <tr>
+      <th></th>
       <th>Name:</th>
       <th>Type:</th>
-      <th class="atk"><a href="" ng-click="$order = 'attack'"> Atk:</a></th>
-      <th class="def">Def:</th>
-      <th class="spa">SpA:</th>
-      <th class="spd">SpD</th>
-      <th class="spe">Spe</th>
-      <th class="hp">Hp</th>
+      <th class="atk"><a href="" ng-click="home.changeOrder('attack')"> Atk:</a></th>
+      <th class="def"><a href="" ng-click="home.changeOrder('defense')">Def:</a></th>
+      <th class="spa"><a href="" ng-click="home.changeOrder('sp_atk')">SpA:</a></th>
+      <th class="spd"><a href="" ng-click="home.changeOrder('sp_def')">SpD</a></th>
+      <th class="spe"><a href="" ng-click="home.changeOrder('speed')">Spe</a></th>
+      <th class="hp"><a href="" ng-click="home.changeOrder('hp')">Hp</a></th>
       <th>Add</th>
     </tr>
-  </thear>
-  <tr ng-repeat="pkmn in home.pokemon | orderBy : $order : true  | filter : names | limitTo : 20" >
+  </thead>
+  <tr ng-repeat="pkmn in home.pokemon | orderBy : home.order : home.reversed  | filter : names | filter : types  | limitTo : 20" >
+    <td><img ng-src="sprites/{{pkmn.national_id}}.gif" class="gif"></td>
     <td>{{pkmn.name}}</td>
-    <td><span ng-repeat="type in pkmn.types">{{type.name}} </span></td>
+    <td>{{pkmn.typeList}}</td>
     <td class="atk">{{pkmn.attack}}</td>
     <td class="def">{{pkmn.defense}}</td>
     <td class="spa">{{pkmn.sp_atk}}</td>

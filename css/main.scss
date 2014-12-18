@@ -30,6 +30,15 @@ body {
   }
 }
 
+.names {
+  @include input;
+  margin-bottom: 10px;
+}
+
+.gif {
+  max-width: 40px;
+}
+
 .add {
   @include button($blue, $off-white);
   @include center;
