@@ -4,11 +4,21 @@
 
 body {
   background: $light-blue;
-  padding-top: 30px;
+  padding-top: 47px;
 }
 
 .topnav {
   @include fixed-nav(shade);
+  @include side-pad(50px);
+}
+
+.logoicon {
+  max-width: 30px;
+}
+
+.logsign {
+  float: right;
+  margin-right: 150px;
 }
 
 .wrap {
@@ -17,6 +27,8 @@ body {
   background: $off-white;
   padding: 15px;
 }
+
+// Pokemon Table
 
 .pkmntable {
   @include striped-table;
@@ -66,4 +78,53 @@ body {
 
 .hp {
   background-color: $red;
+}
+
+
+// Navigation Dropdown
+
+nav div {
+  display: inline-block;
+  float: right;
+}
+nav ul {
+  display: inline-block;
+  list-style: none;
+  padding: 0 19px;
+  position: relative;
+  float: right;
+  margin: 0;
+  ul {
+    @include smooth;
+    padding: 20px;
+    display: none;
+    left: 10px;
+    position: absolute;
+    top: 27px;
+    border: 2px solid $grey;
+
+    li {
+      float: none;
+      display: block;
+      padding: 5px;
+
+      input {
+        @include input;
+      }
+
+      button {
+        @include button($light-blue, $off-white);
+      }
+    }
+  }
+}
+
+.show {
+  display: inline-block;
+  @include center;
+  margin: 0;
+  padding : 0;
+  background: $off-white;
+
+
 }

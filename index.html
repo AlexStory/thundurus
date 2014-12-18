@@ -7,12 +7,25 @@
 </head>
 <body>
   <nav class="topnav">
-    <em> Thundurus
-    </em>
+    <img src="img/thundurus.jpg" class="logoicon">
+    <em>Thundurus</em>
+    <div >
+      <ul>
+        <li><span class="logsign">Login/Sign-Up</span>
+          <ul class="logform">
+            <li><input type="text" class="loginput" placeholder="email"></li>
+            <li><input type="password" class="loginput" placeholder="password"></li>
+            <li><button>Log In</button></li>
+            <li><button>Register</button></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
   <div ng-view class="wrap">
   </div>
 </body>
+<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
 <script src="bower_components/lodash/dist/lodash.compat.min.js"></script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
