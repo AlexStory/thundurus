@@ -32,7 +32,7 @@
       <th class="spd"><a href="" ng-click="home.changeOrder('sp_def')">SpD</a></th>
       <th class="spe"><a href="" ng-click="home.changeOrder('speed')">Spe</a></th>
       <th class="hp"><a href="" ng-click="home.changeOrder('hp')">Hp</a></th>
-      <th>Add</th>
+      <th ng-show="user">Add</th>
     </tr>
   </thead>
   <tr ng-repeat="pkmn in home.pokemon | orderBy : home.order : home.reversed  | filter : names | filter : types  | limitTo : 20" >
@@ -45,6 +45,6 @@
     <td class="spd">{{pkmn.sp_def}}</td>
     <td class="spe">{{pkmn.speed}}</td>
     <td class="hp">{{pkmn.hp}}</td>
-    <td><button class="add">Add</button></td>
+    <td ng-show="user"><button class="add">Add</button></td>
   </tr>
 </table>
