@@ -28,6 +28,11 @@ angular.module "thundurus"
           .child 'authData'
           .set authData
 
+          ref.child 'users'
+          .child authData.uid
+          .child 'teams'
+          .set false
+
   vm.login = ->
     ref.authWithPassword
       "email": vm.email,
@@ -38,6 +43,10 @@ angular.module "thundurus"
         else
           console.log "Authenticated successfully with payload:", authData
           $rootScope.user = ref.getAuth()
+          ref.child 'users'
+          .child authData.uid
+          .child 'authData'
+          .set authData
           $scope.$apply()
           vm.showLog()
           return

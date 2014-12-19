@@ -22,7 +22,8 @@
           }
         } else {
           console.log("User account created successfully!");
-          return ref.child('users').child(authData.uid).child('authData').set(authData);
+          ref.child('users').child(authData.uid).child('authData').set(authData);
+          return ref.child('users').child(authData.uid).child('teams').set(false);
         }
       });
     };
@@ -36,6 +37,7 @@
         } else {
           console.log("Authenticated successfully with payload:", authData);
           $rootScope.user = ref.getAuth();
+          ref.child('users').child(authData.uid).child('authData').set(authData);
           $scope.$apply();
           vm.showLog();
         }
