@@ -6,6 +6,8 @@
       templateUrl: 'views/_home.html',
       controller: 'HomeController',
       controllerAs: 'home'
+    }).otherwise({
+      redirectTo: '/'
     });
   });
 

@@ -15,8 +15,7 @@
       vm.order = input;
     };
     pkmnFactory.setPokes(function(data) {
-      vm.pokemon = data;
-      return console.log(vm.pokemon);
+      return vm.pokemon = data;
     });
   });
 

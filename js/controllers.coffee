@@ -13,5 +13,4 @@ angular.module 'thundurus'
 
   pkmnFactory.setPokes (data)->
     vm.pokemon = data
-    console.log vm.pokemon
   return

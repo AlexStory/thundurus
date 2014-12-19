@@ -22,7 +22,7 @@
 }
 
 .add {
-  @include button($blue, $off-white);
+  @include button($blue, $off-white, inverse);
   @include center;
 }
 

@@ -99,7 +99,9 @@ a {
   margin-right: auto;
   text-align: center; }
   .add:hover {
-    background-color: #20638f; }
+    background-color: #fdfdfd;
+    border-color: #2980b9;
+    color: #2980b9; }
 
 .atk {
   background-color: #f39c12; }
@@ -144,14 +146,8 @@ a {
 
 .logsign {
   float: right;
-  margin-right: 150px; }
-
-.links {
-  margin-right: 20px; }
-  .links li {
-    display: inline-block; }
-    .links li:nth-child(n+2):before {
-      content: ' | '; }
+  margin-right: 150px;
+  display: inline-block; }
 
 nav div {
   display: inline-block;
@@ -196,7 +192,9 @@ nav ul {
         color: #fdfdfd;
         padding: 0.5em 1em; }
         nav ul ul li button:hover {
-          background-color: #217dbb; }
+          background-color: #fdfdfd;
+          border-color: #3498db;
+          color: #3498db; }
 
 .show {
   margin-left: auto;
@@ -206,6 +204,33 @@ nav ul {
   margin: 0;
   padding: 0;
   background: #fdfdfd; }
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.7; }
+
+.links {
+  margin-left: 20px;
+  float: none; }
+  .links li {
+    display: inline-block; }
+    .links li:nth-child(n+2):before {
+      content: ' | '; }
+
+.tri {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #7f8c8d;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  float: right; }
+
+.userdrop li {
+  border-bottom: 2px solid #7f8c8d; }
 
 .thun {
   box-sizing: border-box;

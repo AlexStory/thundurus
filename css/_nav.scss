@@ -16,20 +16,8 @@
 .logsign {
   float: right;
   margin-right: 150px;
+  display: inline-block;
 }
-
-.links {
-  margin-right: 20px;
-
-  li {
-    display: inline-block;
-
-    &:nth-child(n+2):before {
-      content: ' | ';
-    }
-  }
-}
-
 
 nav div {
   display: inline-block;
@@ -63,7 +51,7 @@ nav ul {
       }
 
       button {
-        @include button($light-blue, $off-white);
+        @include button($light-blue, $off-white, inverse);
       }
     }
   }
@@ -77,4 +65,33 @@ nav ul {
   background: $off-white;
 
 
+}
+
+.disabled {
+  @include disabled
+}
+
+
+.links {
+  margin-left: 20px;
+  float: none;
+
+  li {
+    display: inline-block;
+
+    &:nth-child(n+2):before {
+      content: ' | ';
+    }
+  }
+}
+
+.tri {
+  @include triangle(18px, 9px, $grey, down);
+  @include vert-margin(12px);
+  float: right;
+
+}
+
+.userdrop li{
+  border-bottom: 2px solid $grey;
 }
