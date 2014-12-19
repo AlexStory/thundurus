@@ -1,8 +1,9 @@
 (function() {
   angular.module("thundurus").factory("pkmnFactory", function($http) {
-    var pokemon, setPokes;
-    pokemon = [];
+    var setPokes;
     setPokes = function(cb) {
+      var pokemon;
+      pokemon = [];
       return $http.get("doc.json").success(function(data) {
         var d, v;
         for (d in data) {
@@ -12,11 +13,10 @@
           }).join('/');
           pokemon.push(v);
         }
-        return cb();
+        return cb(pokemon);
       });
     };
     return {
-      pokemon: pokemon,
       setPokes: setPokes
     };
   });

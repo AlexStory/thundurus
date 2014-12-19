@@ -1,0 +1,51 @@
+// Pokemon Table
+
+.pkmntable {
+  @include striped-table;
+  @include center;
+  td {
+    padding-right: 15px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.names {
+  @include input;
+  margin-bottom: 10px;
+}
+
+.gif {
+  max-width: 40px;
+}
+
+.add {
+  @include button($blue, $off-white, inverse);
+  @include center;
+}
+
+.atk {
+  background-color: $orange;
+}
+
+.def {
+  background-color: $yellow;
+}
+
+.spa {
+  background-color: $light-blue;
+}
+
+.spd {
+  background-color: $light-green;
+}
+
+.spe {
+  background-color: $light-purple;
+}
+
+.hp {
+  background-color: $red;
+}

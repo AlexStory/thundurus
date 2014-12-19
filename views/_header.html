@@ -1,20 +1,34 @@
 <nav class="topnav" ng-controller="NavController as nav">
-  <em>Thundurus</em>
-  <div >
+  <a href="/#/"><em>Thundurus</em></a>
+
+  <div  ng-hide="user">
     <ul>
       <li><a class="logsign" href="" ng-click="nav.showLog()">Login/Sign-Up</a>
+        <form name="loginform" novalidate>
         <ul class="logform">
-          <li><input type="text" class="loginput" placeholder="email"></li>
-          <li><input type="password" class="loginput" placeholder="password"></li>
-          <li><button>Log In</button></li>
-          <li><button>Register</button></li>
+          <li><input type="email" class="loginput" placeholder="email" ng-model="nav.email" required></li>
+          <li><input type="password" class="loginput" placeholder="password" ng-model="nav.password" required></li>
+          <li><button ng-click="nav.login()" ng-class="{disabled : loginform.$invalid}">Log In</button></li>
+          <li><button ng-click="nav.register()" ng-class="{disabled : loginform.$invalid}">Register</button></li>
         </ul>
+      </form>
+      </li>
+    </ul>
+  </div>
+
+  <div  ng-show="user">
+    <ul>
+      <li><a class="logsign" href="" ng-click="nav.showLog()">{{user.password.email}}
+        <span class="tri"></span></a>
+          <ul class="logform userdrop">
+            <li ng-click="nav.unauth()"> Logout </li>
+          </ul>
       </li>
     </ul>
   </div>
 
   <ul class="links">
-    <li>My Teams</li>
-    <li>Find Pokemon</li>
+    <li><a href="/#/pokemon">Find Pokemon</a></li>
+    <li ng-show="user">My Teams</li>
   </ul>
 </nav>

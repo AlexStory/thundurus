@@ -1,0 +1,24 @@
+.thun {
+  @include span(4);
+  float: left;
+}
+
+.infotext {
+  @include span(8);
+  display: inline-block;
+  float: left;
+
+  h1 {
+    font-family: 'munro';
+  }
+
+  button {
+    @include button($red, $off-white, inverse);
+    float: right;
+    font-size: 18px;
+  }
+
+  p {
+    text-align: left;
+  }
+}

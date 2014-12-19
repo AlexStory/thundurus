@@ -178,6 +178,12 @@
     }
 }
 
+@mixin disabled() {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: .7;
+}
+
 @mixin fixed-nav($color: $off-white, $font-color: $off-black, $style: null) {
   @include side-pad(15px);
   width: 100%;

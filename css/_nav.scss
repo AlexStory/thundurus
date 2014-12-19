@@ -1,0 +1,97 @@
+// Navigation Dropdown
+
+@font-face { font-family: munro; src: url('../img/MunroNarrow.ttf'); }
+
+.topnav {
+  @include fixed-nav(shade);
+  @include side-pad(50px);
+  font-family: 'munro';
+  font-size: 30px;
+}
+
+.logoicon {
+  max-width: 30px;
+}
+
+.logsign {
+  float: right;
+  margin-right: 150px;
+  display: inline-block;
+}
+
+nav div {
+  display: inline-block;
+  float: right;
+}
+
+nav ul {
+  display: inline-block;
+  list-style: none;
+  padding: 0 19px;
+  position: relative;
+  float: right;
+  margin: 0;
+
+  ul {
+    @include smooth;
+    padding: 20px;
+    display: none;
+    left: 10px;
+    position: absolute;
+    top: 27px;
+    border: 2px solid $grey;
+
+    li {
+      float: none;
+      display: block;
+      padding: 5px;
+
+      input {
+        @include input;
+      }
+
+      button {
+        @include button($light-blue, $off-white, inverse);
+      }
+    }
+  }
+}
+
+.show {
+  @include center;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background: $off-white;
+
+
+}
+
+.disabled {
+  @include disabled
+}
+
+
+.links {
+  margin-left: 20px;
+  float: none;
+
+  li {
+    display: inline-block;
+
+    &:nth-child(n+2):before {
+      content: ' | ';
+    }
+  }
+}
+
+.tri {
+  @include triangle(18px, 9px, $grey, down);
+  @include vert-margin(12px);
+  float: right;
+
+}
+
+.userdrop li{
+  border-bottom: 2px solid $grey;
+}
