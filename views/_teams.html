@@ -1,0 +1,18 @@
+<section class="teams">
+  <button ng-click="teamctrl.addTeam()">Add Team</button>
+  <button ng-click="teamctrl.createRandom()">Create Random Team</button>
+  <table>
+    <tr ng-repeat="team in teams">
+      <td ng-repeat="(pokeid, poke) in team.pokemon">
+        <img ng-src="sprites/{{poke.national_id}}.gif" class="gif">
+        <button ng-show="teamctrl.edit===team" ng-click="teamctrl.deletePoke(team.teamName, pokeid)" class="delete-button">X</button>
+      </td>
+      <td><button ng-click="teamctrl.select(team.teamName)">Add</button></td>
+      <td><button ng-click="teamctrl.deleteTeam(team.teamName)">Delete</button></td>
+      <td><button ng-click="teamctrl.changeEdit(team)">Edit</button></td>
+      <td><button ng-click="teamctrl.addRandom(team)">+?</button></td>
+
+
+    </tr>
+  </table>
+</section>

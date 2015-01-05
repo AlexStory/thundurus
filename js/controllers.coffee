@@ -1,5 +1,5 @@
 angular.module 'thundurus'
-.controller 'HomeController', (pkmnFactory) ->
+.controller 'HomeController', (pkmnFactory, fbFactory, $rootScope) ->
   vm = @
   vm.pokemon = []
   vm.order='national_id'
@@ -13,4 +13,10 @@ angular.module 'thundurus'
 
   pkmnFactory.setPokes (data)->
     vm.pokemon = data
+
+  vm.add = (poke) ->
+    delete poke.$$hashKey
+    delete poke.moves
+    fbFactory.addPoke(poke)
+    return
   return

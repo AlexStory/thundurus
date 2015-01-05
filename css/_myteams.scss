@@ -1,0 +1,28 @@
+.teams {
+  button,
+  a {
+    @include button($light-blue, $off-white, inverse);
+  }
+
+  .delete-button {
+    position: absolute;
+    @include button($red, $off-white, inverse);
+    font-size: .75em;
+    margin-left: -40px;
+    height:40px;
+    width: 40px;
+    opacity: .5;
+  }
+
+  table {
+    @include striped-table;
+    @include center;
+    @include vert-margin(15px);
+    td {
+      @include side-pad(10px);
+      position: relative;
+      width: 10%;
+    }
+  }
+
+}

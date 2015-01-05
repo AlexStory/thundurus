@@ -1,0 +1,41 @@
+<section class="pokepage">
+  <h1>{{pokectrl.pokemon.name}}</h1>
+  <div >
+    <h3 ng-repeat="type in pokectrl.pokemon.types">{{type.name}} &nbsp;</h3>
+  </div>
+  <img ng-src="sprites/{{pokectrl.pokemon.national_id}}.gif">
+  <div class="stats">
+      <table>
+        <tr>
+          <td><span>HP</span></td>
+          <td><svg class="hpbar" width="{{pokectrl.pokemon.hp}}px"></svg></td>
+          <td>{{pokectrl.pokemon.hp}}</td>
+        </tr>
+        <tr>
+          <td><span>Attack</span></td>
+          <td><svg class="atkbar" width="{{pokectrl.pokemon.attack}}px"></svg></td>
+          <td>{{pokectrl.pokemon.hp}}</td>
+        </tr>
+        <tr>
+          <td><span>Defense</span></td>
+          <td><svg class="defbar" width="{{pokectrl.pokemon.defense}}px"></svg></td>
+          <td>{{pokectrl.pokemon.defense}}</td>
+        </tr>
+        <tr>
+          <td><span>Special Attack</span></td>
+          <td><svg class="spabar" width="{{pokectrl.pokemon.sp_atk}}px"></svg></td>
+          <td>{{pokectrl.pokemon.sp_atk}}</td>
+        </tr>
+        <tr>
+          <td><span>Special Defense</span></td>
+          <td><svg class="spdbar" width="{{pokectrl.pokemon.sp_def}}px"></svg></td>
+          <td>{{pokectrl.pokemon.sp_def}}</td>
+        </tr>
+        <tr>
+          <td><span>Speed</span></td>
+          <td><svg class="spebar" width="{{pokectrl.pokemon.speed}}px"></svg></td>
+          <td>{{pokectrl.pokemon.speed}}</td>
+        </tr>
+      </table>
+  </div>
+</section>

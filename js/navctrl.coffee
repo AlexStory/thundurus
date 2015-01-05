@@ -28,10 +28,7 @@ angular.module "thundurus"
           .child 'authData'
           .set authData
 
-          ref.child 'users'
-          .child authData.uid
-          .child 'teams'
-          .set false
+          vm.login()
 
   vm.login = ->
     ref.authWithPassword
@@ -49,12 +46,14 @@ angular.module "thundurus"
           .set authData
           $scope.$apply()
           vm.showLog()
+          vm.findTeams()
           return
 
   vm.getAuth = ->
     authData = ref.getAuth()
     if authData
       $rootScope.user = authData
+      $rootScope.teams = []
       return
     return
 
@@ -62,6 +61,9 @@ angular.module "thundurus"
     ref.unauth()
     $rootScope.user = null
     vm.showLog()
+
+  vm.findTeams = ->
+    fbFactory.getTeams()
 
   vm.getAuth()
 

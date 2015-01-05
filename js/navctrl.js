@@ -23,7 +23,7 @@
         } else {
           console.log("User account created successfully!");
           ref.child('users').child(authData.uid).child('authData').set(authData);
-          return ref.child('users').child(authData.uid).child('teams').set(false);
+          return vm.login();
         }
       });
     };
@@ -40,6 +40,7 @@
           ref.child('users').child(authData.uid).child('authData').set(authData);
           $scope.$apply();
           vm.showLog();
+          vm.findTeams();
         }
       });
     };
@@ -48,6 +49,7 @@
       authData = ref.getAuth();
       if (authData) {
         $rootScope.user = authData;
+        $rootScope.teams = [];
         return;
       }
     };
@@ -55,6 +57,9 @@
       ref.unauth();
       $rootScope.user = null;
       return vm.showLog();
+    };
+    vm.findTeams = function() {
+      return fbFactory.getTeams();
     };
     vm.getAuth();
   });

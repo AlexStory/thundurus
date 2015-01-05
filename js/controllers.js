@@ -1,5 +1,5 @@
 (function() {
-  angular.module('thundurus').controller('HomeController', function(pkmnFactory) {
+  angular.module('thundurus').controller('HomeController', function(pkmnFactory, fbFactory, $rootScope) {
     var vm;
     vm = this;
     vm.pokemon = [];
@@ -17,6 +17,11 @@
     pkmnFactory.setPokes(function(data) {
       return vm.pokemon = data;
     });
+    vm.add = function(poke) {
+      delete poke.$$hashKey;
+      delete poke.moves;
+      fbFactory.addPoke(poke);
+    };
   });
 
 }).call(this);

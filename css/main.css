@@ -262,3 +262,96 @@ nav ul {
       color: #e74c3c; }
   .infotext p {
     text-align: left; }
+
+.teams button, .teams a {
+  background-color: #3498db;
+  border: 1px solid #fdfdfd;
+  border-radius: 10px;
+  color: #fdfdfd;
+  padding: 0.5em 1em; }
+  .teams button:hover, .teams a:hover {
+    background-color: #fdfdfd;
+    border-color: #3498db;
+    color: #3498db; }
+.teams .delete-button {
+  position: absolute;
+  background-color: #e74c3c;
+  border: 1px solid #fdfdfd;
+  border-radius: 10px;
+  color: #fdfdfd;
+  padding: 0.5em 1em;
+  font-size: 0.75em;
+  margin-left: -40px;
+  height: 40px;
+  width: 40px;
+  opacity: 0.5; }
+  .teams .delete-button:hover {
+    background-color: #fdfdfd;
+    border-color: #e74c3c;
+    color: #e74c3c; }
+.teams table {
+  border-spacing: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px; }
+  .teams table tbody td {
+    border-top: 1px solid #d4d4d4;
+    text-align: left; }
+  .teams table tbody tr:nth-child(odd) {
+    background-color: #eee; }
+  .teams table tbody tr:nth-child(even) {
+    background-color: #fdfdfd; }
+  .teams table thead th {
+    background-color: #fdfdfd;
+    border-bottom: 2px #d4d4d4 solid;
+    text-align: left; }
+  .teams table td {
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    width: 10%; }
+
+.pokepage {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 15px; }
+  .pokepage h1 {
+    font-family: 'munro';
+    margin-bottom: 10px; }
+  .pokepage h3 {
+    font-family: 'munro';
+    display: inline-block;
+    margin-top: 10px; }
+  .pokepage img {
+    height: 131px;
+    margin-right: 15px; }
+  .pokepage .stats {
+    height: 100px;
+    display: inline-block; }
+    .pokepage .stats:after {
+      clear: both;
+      content: '';
+      display: table; }
+    .pokepage .stats td:nth-child(0n+1) {
+      text-align: left;
+      padding-right: 15px; }
+    .pokepage .stats td:nth-child(even) {
+      text-align: right; }
+  .pokepage .hpbar, .pokepage .atkbar, .pokepage .defbar, .pokepage .spabar, .pokepage .spdbar, .pokepage .spebar {
+    display: inline-block;
+    height: 10px; }
+  .pokepage .hpbar {
+    background-color: #e74c3c; }
+  .pokepage .atkbar {
+    background-color: #f39c12; }
+  .pokepage .defbar {
+    background-color: #f1c40f; }
+  .pokepage .spabar {
+    background-color: #3498db; }
+  .pokepage .spdbar {
+    background-color: #2ecc71; }
+  .pokepage .spebar {
+    background-color: #9b59b6; }
