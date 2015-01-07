@@ -3,10 +3,32 @@
   <button ng-click="teamctrl.createRandom()">Create Random Team</button>
   <table>
     <tr ng-repeat="team in teams">
-      <td ng-repeat="(pokeid, poke) in team.pokemon">
-        <img ng-src="sprites/{{poke.national_id}}.gif" class="gif">
-        <button ng-show="teamctrl.edit===team" ng-click="teamctrl.deletePoke(team.teamName, pokeid)" class="delete-button">X</button>
+      <td><button ng-click="teamctrl.goToTeam(team)">View</button></td>
+      <td>
+        <img ng-src="sprites/{{team.pokemon[0].national_id}}.gif" class="gif">
+        <button ng-show="teamctrl.edit===team" ng-click="teamctrl.deletePoke(team.teamName, team.pokemon[0].pokeName)" class="delete-button">X</button>
       </td>
+      <td>
+        <img ng-src="sprites/{{team.pokemon[1].national_id}}.gif" class="gif">
+        <button ng-show="teamctrl.edit===team" ng-click="teamctrl.deletePoke(team.teamName, team.pokemon[1].pokeName)" class="delete-button">X</button>
+      </td>
+      <td>
+        <img ng-src="sprites/{{team.pokemon[2].national_id}}.gif" class="gif">
+        <button ng-show="teamctrl.edit===team" ng-click="teamctrl.deletePoke(team.teamName, team.pokemon[2].pokeName)" class="delete-button">X</button>
+      </td>
+      <td>
+        <img ng-src="sprites/{{team.pokemon[3].national_id}}.gif" class="gif">
+        <button ng-show="teamctrl.edit===team" ng-click="teamctrl.deletePoke(team.teamName, team.pokemon[3].pokeName)" class="delete-button">X</button>
+      </td>
+      <td>
+        <img ng-src="sprites/{{team.pokemon[4].national_id}}.gif" class="gif">
+        <button ng-show="teamctrl.edit===team" ng-click="teamctrl.deletePoke(team.teamName, team.pokemon[4].pokeName)" class="delete-button">X</button>
+      </td>
+      <td>
+        <img ng-src="sprites/{{team.pokemon[5].national_id}}.gif" class="gif">
+        <button ng-show="teamctrl.edit===team" ng-click="teamctrl.deletePoke(team.teamName, team.pokemon[5].pokeName)" class="delete-button">X</button>
+      </td>
+
       <td><button ng-click="teamctrl.select(team.teamName)">Add</button></td>
       <td><button ng-click="teamctrl.deleteTeam(team.teamName)">Delete</button></td>
       <td><button ng-click="teamctrl.changeEdit(team)">Edit</button></td>

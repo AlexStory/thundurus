@@ -1,6 +1,9 @@
 .pokepage {
   @include center;
   padding: 15px;
+  li {
+    list-style-type: none;
+  }
 
   h1 {
     font-family: 'munro';
@@ -18,10 +21,16 @@
     margin-right: 15px;
   }
 
+
   .stats {
     height: 100px;
     display: inline-block;
+    margin-bottom: 15px;
     @include clearfix;
+
+    table {
+      @include striped-table;
+    }
 
     td:nth-child(0n+1) {
       text-align: left;

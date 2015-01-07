@@ -318,6 +318,8 @@ nav ul {
   margin-right: auto;
   text-align: center;
   padding: 15px; }
+  .pokepage li {
+    list-style-type: none; }
   .pokepage h1 {
     font-family: 'munro';
     margin-bottom: 10px; }
@@ -330,11 +332,25 @@ nav ul {
     margin-right: 15px; }
   .pokepage .stats {
     height: 100px;
-    display: inline-block; }
+    display: inline-block;
+    margin-bottom: 15px; }
     .pokepage .stats:after {
       clear: both;
       content: '';
       display: table; }
+    .pokepage .stats table {
+      border-spacing: 0; }
+      .pokepage .stats table tbody td {
+        border-top: 1px solid #d4d4d4;
+        text-align: left; }
+      .pokepage .stats table tbody tr:nth-child(odd) {
+        background-color: #eee; }
+      .pokepage .stats table tbody tr:nth-child(even) {
+        background-color: #fdfdfd; }
+      .pokepage .stats table thead th {
+        background-color: #fdfdfd;
+        border-bottom: 2px #d4d4d4 solid;
+        text-align: left; }
     .pokepage .stats td:nth-child(0n+1) {
       text-align: left;
       padding-right: 15px; }
@@ -355,3 +371,34 @@ nav ul {
     background-color: #2ecc71; }
   .pokepage .spebar {
     background-color: #9b59b6; }
+
+.my-team {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  .my-team table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-spacing: 0; }
+    .my-team table tbody td {
+      border-top: 1px solid #d4d4d4;
+      text-align: left; }
+    .my-team table tbody tr:nth-child(odd) {
+      background-color: #eee; }
+    .my-team table tbody tr:nth-child(even) {
+      background-color: #fdfdfd; }
+    .my-team table thead th {
+      background-color: #fdfdfd;
+      border-bottom: 2px #d4d4d4 solid;
+      text-align: left; }
+    .my-team table .weak {
+      height: 10px;
+      background-color: #e74c3c; }
+    .my-team table .strong {
+      height: 10px;
+      background-color: #3498db; }
+    .my-team table .title-cell {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; }

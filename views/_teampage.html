@@ -1,0 +1,28 @@
+<section class="my-team">
+  <table>
+    <tr>
+      <td ng-repeat="pokemon in teamctrl.team" class="title-cell">{{pokemon.name}}</td>
+    </tr>
+    <tr>
+      <td ng-repeat="pokemon in teamctrl.team">
+        <img ng-src="sprites/{{pokemon.national_id}}.gif">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="6" class="title-cell"> Weanesses</td>
+    </tr>
+    <tr ng-repeat="(weaknessid, weakness) in teamctrl.weak">
+      <td colspan="2">{{weaknessid}}</td>
+      <td colspan="2"><svg width="{{weakness * 30}}" class="weak"></svg></td>
+      <td colspan="2">{{weakness}}</td>
+    </tr>
+    <tr>
+      <td colspan="6" class="title-cell"> Strengths</td>
+    </tr>
+    <tr ng-repeat="(strengthid, strength) in teamctrl.strengths">
+      <td colspan="2">{{strengthid}}</td>
+      <td colspan="2"><svg width="{{strength * 30}}" class="strong"></svg></td>
+      <td colspan="2">{{strength}}</td>
+    </tr>
+  </table>
+</section>

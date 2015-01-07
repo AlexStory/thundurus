@@ -3,9 +3,9 @@
     var addPoke, addTeam, deletePoke, deleteTeam, getTeams, ref, url;
     url = 'https://thundurus.firebaseio.com/';
     ref = new Firebase(url);
-    getTeams = function() {
+    getTeams = function(cb) {
       $http.get(url + 'users/' + $rootScope.user.uid + '/teams/.json').success(function(data) {
-        var d, v;
+        var d, e, f, pokes, temp, v;
         $rootScope.teams = [];
         for (d in data) {
           v = data[d];
@@ -13,7 +13,21 @@
             v = {};
           }
           v.teamName = d;
+          pokes = v.pokemon;
+          temp = [];
+          for (e in pokes) {
+            f = pokes[e];
+            if (f === '') {
+              f = {};
+            }
+            f.pokeName = e;
+            temp.push(f);
+          }
+          v.pokemon = temp;
           $rootScope.teams.push(v);
+        }
+        if (cb) {
+          cb();
         }
       });
     };
@@ -56,36 +70,29 @@
       ref.child('users').child($rootScope.user.uid).child('teams').push(input);
       getTeams();
     };
-    deleteTeam = function(id) {
+    deleteTeam = function(id, cb) {
       return $http["delete"](url + 'users/' + $rootScope.user.uid + '/teams/' + id + '.json').success(function() {
-        var team, _i, _len, _ref, _results;
-        _ref = $rootScope.teams;
-        _results = [];
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          team = _ref[_i];
-          if (team.teamName === id) {
-            _results.push($rootScope.teams.pop(team));
-          } else {
-            _results.push(void 0);
-          }
+        getTeams();
+        if (cb) {
+          return cb();
         }
-        return _results;
       });
     };
     deletePoke = function(id, poke) {
       return $http["delete"](url + 'users/' + $rootScope.user.uid + '/teams/' + id + '/pokemon/' + poke + '.json').success(function() {
-        var team, _i, _len, _ref, _results;
+        var i, pokemon, team, _i, _j, _len, _len1, _ref, _ref1;
         _ref = $rootScope.teams;
-        _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           team = _ref[_i];
-          if (team.teamName === id) {
-            _results.push(delete team.pokemon[poke]);
-          } else {
-            _results.push(void 0);
+          _ref1 = team.pokemon;
+          for (i = _j = 0, _len1 = _ref1.length; _j < _len1; i = ++_j) {
+            pokemon = _ref1[i];
+            if (team.teamName === id && pokemon.pokeName === poke) {
+              pokemon;
+            }
           }
         }
-        return _results;
+        return getTeams();
       });
     };
     return {

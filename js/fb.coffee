@@ -3,14 +3,22 @@ angular.module 'thundurus'
   url = 'https://thundurus.firebaseio.com/'
   ref = new Firebase url
 
-  getTeams = ->
+  getTeams = (cb)->
     $http.get  url + 'users/' + $rootScope.user.uid + '/teams/.json'
     .success (data) ->
       $rootScope.teams = []
       for d, v of data
         v = {} if v is ''
         v.teamName = d
+        pokes = v.pokemon
+        temp = []
+        for e,f of pokes
+          f = {} if f is ''
+          f.pokeName = e
+          temp.push f
+        v.pokemon = temp
         $rootScope.teams.push v
+      cb() if cb
       return
     return
 
@@ -44,17 +52,21 @@ angular.module 'thundurus'
     getTeams()
     return
 
-  deleteTeam =(id)->
+  deleteTeam =(id, cb)->
     $http.delete url + 'users/' + $rootScope.user.uid + '/teams/' + id + '.json'
     .success ->
-      for team in $rootScope.teams
-        $rootScope.teams.pop(team) if team.teamName is id
+      # for team in $rootScope.teams
+        # $rootScope.teams.pop(team) if team.teamName is id
+      getTeams()
+      cb() if cb
 
   deletePoke =(id, poke)->
     $http.delete url + 'users/' + $rootScope.user.uid + '/teams/' + id + '/pokemon/' + poke + '.json'
     .success ->
       for team in $rootScope.teams
-        delete team.pokemon[poke] if team.teamName is id
+        for pokemon, i in team.pokemon
+          pokemon if team.teamName is id and pokemon.pokeName is poke
+      getTeams()
 
 
   getTeams: getTeams

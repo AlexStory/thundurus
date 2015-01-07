@@ -14,6 +14,10 @@
       templateUrl: 'views/_pokepage.html',
       controller: 'pokepagectrl',
       controllerAs: 'pokectrl'
+    }).when("/teams/:id", {
+      templateUrl: 'views/_teampage.html',
+      controller: 'teampagectrl',
+      controllerAs: 'teamctrl'
     }).otherwise({
       redirectTo: '/'
     });

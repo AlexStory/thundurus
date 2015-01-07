@@ -38,4 +38,11 @@
         </tr>
       </table>
   </div>
+  <p>
+    <span> Abilities: </span>
+    <span ng-repeat="ability in pokectrl.pokemon.abilities">{{ability.name}} &nbsp;</span>
+  </p>
+  <ul>
+    <li ng-repeat="move in pokectrl.pokemon.moves">{{move.name}}</li>
+  </ul>
 </section>

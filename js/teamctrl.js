@@ -46,11 +46,16 @@
       return fbFactory.getTeams();
     };
     vm.deleteTeam = function(id) {
-      fbFactory.deleteTeam(id);
+      fbFactory.deleteTeam(id, function() {
+        return fbFactory.getTeams();
+      });
     };
     vm.deletePoke = function(id, poke) {
       fbFactory.deletePoke(id, poke);
       vm.changeEdit(id);
+    };
+    vm.goToTeam = function(team) {
+      return $location.path('/teams/' + team.teamName);
     };
     pkmnFactory.setPokes(function(data) {
       return pokemon = data;

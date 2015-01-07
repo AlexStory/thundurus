@@ -40,13 +40,17 @@ angular.module 'thundurus'
     fbFactory.getTeams()
 
   vm.deleteTeam = (id) ->
-    fbFactory.deleteTeam(id)
+    fbFactory.deleteTeam id, ->
+      fbFactory.getTeams()
     return
 
   vm.deletePoke = (id, poke) ->
     fbFactory.deletePoke(id, poke)
     vm.changeEdit(id)
     return
+
+  vm.goToTeam = (team) ->
+    $location.path '/teams/' + team.teamName
 
   pkmnFactory.setPokes (data)->
     pokemon = data
