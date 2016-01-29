@@ -37,7 +37,7 @@
   </thead>
   <tr ng-repeat="pkmn in home.pokemon | orderBy : home.order : home.reversed  | filter : names | filter : types  | limitTo : 20" >
     <td><img ng-src="sprites/{{pkmn.national_id}}.gif" class="gif"></td>
-    <td><a href="thundurus/#/pokemon/{{pkmn.national_id}}">{{pkmn.name}}</a></td>
+    <td><a href="#/pokemon/{{pkmn.national_id}}">{{pkmn.name}}</a></td>
     <td>{{pkmn.typeList}}</td>
     <td class="atk">{{pkmn.attack}}</td>
     <td class="def">{{pkmn.defense}}</td>
